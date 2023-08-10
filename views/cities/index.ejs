@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Province</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% cities.forEach((c)=>{ %>
+    <tr>
+        <td><%= c.city %></td>
+        <td><%= c.province %></td>
+        <td><%= c.population %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+
+<%- include('../partials/footer') %>
