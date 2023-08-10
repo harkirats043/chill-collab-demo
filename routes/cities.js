@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const citiesCtrl = require('../controllers/cities');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/new', citiesCtrl.new);
 
 module.exports = router;
