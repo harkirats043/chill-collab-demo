@@ -1,5 +1,29 @@
 <%- include('../partials/header') %>
 
-<p>Hello World!</p>
+    <form action="/cities" method="POST">
 
-<%- include('../partials/footer') %>
+
+        <label>City Name:
+            <input type="string" name="city" required>
+        </label><br>
+
+        <label>Province:
+            <select name="province">
+               <% provinces.forEach((p)=>{  %>
+                <option value= "<%=p%>"><%= p %></option>
+               <% })%>
+            </select>
+        </label><br>
+
+        <label>Population:
+            <input type="Number" name="population" >
+        </label><br>
+
+        <button type="submit">Add City</button>
+
+    </form>
+    <p>
+        <%= errorMsg %>
+    </p>
+
+    <%- include('../partials/footer') %>
