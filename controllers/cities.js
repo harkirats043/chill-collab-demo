@@ -18,7 +18,8 @@ const provinces= [
 module.exports = {
     new: newCity,
     create: createOne,
-    index
+    index,
+    show
 }
 
 function newCity (req,res) {
@@ -52,5 +53,15 @@ async function index(req, res) {
     } catch (err) {
       console.log(err);
       res.render("cities/index", { errorMsg: err.message });
+    }
+  }
+
+  async function show(req, res) {
+    try {
+    // res.send(req.params);
+    const city = await City.findById(req.params.id);
+    res.render("cities/show", { title: "City Detail", city });
+    } catch (err) {
+      console.log(err);
     }
   }
