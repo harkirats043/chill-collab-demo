@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+nav > img {
+  width: 25px;
+  object-fit: contain;
+  margin-right: auto;
+}
